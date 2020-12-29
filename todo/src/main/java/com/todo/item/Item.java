@@ -14,7 +14,7 @@ public class Item {
         return this.text;
     }
 
-    int getIndex() {
+    public int getIndex() {
         return index;
     }
 

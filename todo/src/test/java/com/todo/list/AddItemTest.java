@@ -21,12 +21,19 @@ public class AddItemTest {
     }
 
     @Test
-    public void test_should_return_new_item_when_add_new_item()
-    {
+    public void test_should_return_new_item_when_add_new_item() {
         TodoList todoList = new TodoList();
-        Item newItem =  todoList.add("item1");
+        Item newItem = todoList.add("item1");
         assertNotNull(newItem);
     }
 
+    @Test
+    public void test_index_should_increase_when_add_new_item() {
+        TodoList todoList = new TodoList();
+        Item item1 = todoList.add("item1");
+        Item item2 = todoList.add("item2");
+        assertEquals(1, item1.getIndex());
+        assertEquals(2, item2.getIndex());
+    }
 
 }

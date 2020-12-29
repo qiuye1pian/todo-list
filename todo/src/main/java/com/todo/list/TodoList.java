@@ -2,10 +2,16 @@ package com.todo.list;
 
 import com.todo.item.Item;
 
-public class TodoList {
+import java.util.ArrayList;
+import java.util.List;
 
-    public Item add(String item1) {
-        return new Item(1, item1);
+public class TodoList {
+    List<Item> itemList = new ArrayList<>();
+
+    public Item add(String text) {
+        Item newItem = new Item(itemList.size() + 1, text);
+        itemList.add(newItem);
+        return newItem;
     }
 
     public int totalSize() {
