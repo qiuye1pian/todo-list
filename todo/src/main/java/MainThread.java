@@ -1,19 +1,27 @@
 import com.console.CommandReceiver;
+import com.console.Input;
+import com.console.Output;
+import com.console.SystemOut;
 
 
 public class MainThread {
-    public static void main(String args[]) {
-
-        System.out.println("请输入命令：");
-        System.out.println("推出请输入：exit");
+    public static void main(String[] args) {
         CommandReceiver commandReceiver = new CommandReceiver();
+        SystemOut systemOut = new SystemOut();
+        run(commandReceiver, systemOut);
+    }
+
+    private static void run(Input input, Output output) {
+        output.println("请输入命令：");
+        output.println("推出请输入：exit");
+
         String commandString;
         do {
-            commandString = commandReceiver.getCommand();
-            System.out.println("命令是" + commandString);
+            commandString = input.getCommand();
+            output.println("命令是" + commandString);
         } while (!commandString.equals("exit"));
 
-        System.out.println("结束");
+        output.println("结束");
     }
 
 }
