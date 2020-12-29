@@ -1,4 +1,4 @@
-import com.console.CommandReceiver;
+import com.console.SystemIn;
 import com.console.Input;
 import com.console.Output;
 import com.console.SystemOut;
@@ -6,7 +6,7 @@ import com.console.SystemOut;
 
 public class MainThread {
     public static void main(String[] args) {
-        run(new CommandReceiver(), new SystemOut());
+        run(new SystemIn(), new SystemOut());
     }
 
     private static void run(Input input, Output output) {
@@ -15,7 +15,7 @@ public class MainThread {
 
         String commandString;
         do {
-            commandString = input.getCommandString();
+            commandString = input.getUserInput();
             output.println("命令是" + commandString);
         } while (!commandString.equals("exit"));
 

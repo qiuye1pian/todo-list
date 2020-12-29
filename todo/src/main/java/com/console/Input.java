@@ -2,6 +2,6 @@ package com.console;
 
 public interface Input {
 
-    String getCommandString();
+    String getUserInput();
 
 }

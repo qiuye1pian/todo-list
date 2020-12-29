@@ -4,12 +4,12 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.Scanner;
 
-public class CommandReceiver implements Input{
+public class SystemIn implements Input{
 
     private Scanner scan = new Scanner(System.in);
 
     @Override
-    public String getCommandString(){
+    public String getUserInput(){
         return StringUtils.trim(scan.nextLine());
     }
 
