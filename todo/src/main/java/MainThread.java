@@ -6,9 +6,7 @@ import com.console.SystemOut;
 
 public class MainThread {
     public static void main(String[] args) {
-        CommandReceiver commandReceiver = new CommandReceiver();
-        SystemOut systemOut = new SystemOut();
-        run(commandReceiver, systemOut);
+        run(new CommandReceiver(), new SystemOut());
     }
 
     private static void run(Input input, Output output) {
