@@ -10,11 +10,16 @@ public class Item {
         this.text = text;
     }
 
-    public String getText() {
+    String getText() {
         return this.text;
     }
 
-    public int getIndex() {
+    int getIndex() {
         return index;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%d. <%s>", this.index, this.text);
     }
 }

@@ -18,4 +18,10 @@ public class ItemTest {
         assertEquals(1, item.getIndex());
     }
 
+    @Test
+    public void test_should_be_show_index_and_text_when_item_toString() {
+        Item item = new Item(1, "item");
+        assertEquals("1. <item>", item.toString());
+    }
+
 }
