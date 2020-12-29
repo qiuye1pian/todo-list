@@ -1,7 +1,6 @@
 package com.todo.list;
 
 import com.todo.item.Item;
-import com.todo.list.TodoList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +16,7 @@ public class AddItemTest {
         //When
         todoList.add("item1");
         //Then
-        assertEquals(1, todoList.totalSize());
+        assertEquals(1, todoList.size());
     }
 
     @Test
@@ -25,7 +24,7 @@ public class AddItemTest {
         TodoList todoList = new TodoList();
         todoList.add("1");
         todoList.add("2");
-        assertEquals(2, todoList.totalSize());
+        assertEquals(2, todoList.size());
     }
 
     @Test
