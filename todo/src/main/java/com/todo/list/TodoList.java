@@ -1,8 +1,11 @@
 package com.todo.list;
 
+import com.todo.item.Item;
+
 public class TodoList {
 
-    public void add(String item1) {
+    public Item add(String item1) {
+        return new Item();
     }
 
     public int totalSize() {
