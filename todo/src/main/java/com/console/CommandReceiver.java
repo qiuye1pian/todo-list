@@ -10,7 +10,7 @@ public class CommandReceiver implements Input{
 
     @Override
     public String getCommandString(){
-        return StringUtils.trim(scan.next());
+        return StringUtils.trim(scan.nextLine());
     }
 
 }
