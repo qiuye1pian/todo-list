@@ -21,6 +21,14 @@ public class AddItemTest {
     }
 
     @Test
+    public void test_todoList_can_calculate_total() {
+        TodoList todoList = new TodoList();
+        todoList.add("1");
+        todoList.add("2");
+        assertEquals(2, todoList.totalSize());
+    }
+
+    @Test
     public void test_should_return_new_item_when_add_new_item() {
         TodoList todoList = new TodoList();
         Item newItem = todoList.add("item1");

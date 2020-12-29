@@ -19,6 +19,6 @@ public class TodoList {
     }
 
     public int totalSize() {
-        return 1;
+        return itemList.size();
     }
 }
