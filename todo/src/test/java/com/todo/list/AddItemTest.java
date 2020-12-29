@@ -1,3 +1,5 @@
+package com.todo.list;
+
 import com.todo.item.Item;
 import com.todo.list.TodoList;
 import org.junit.Test;
@@ -6,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 
-public class TestAddItem {
+public class AddItemTest {
 
     @Test
     public void test_todoList_can_add_item() {
