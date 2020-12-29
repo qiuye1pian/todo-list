@@ -7,7 +7,7 @@ public class CommandReceiver implements Input{
     private Scanner scan = new Scanner(System.in);
 
     @Override
-    public String getCommand(){
+    public String getCommandString(){
         return scan.next();
     }
 

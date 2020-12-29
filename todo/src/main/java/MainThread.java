@@ -17,7 +17,7 @@ public class MainThread {
 
         String commandString;
         do {
-            commandString = input.getCommand();
+            commandString = input.getCommandString();
             output.println("命令是" + commandString);
         } while (!commandString.equals("exit"));
 
