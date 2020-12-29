@@ -1,5 +1,7 @@
 package com.console;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.Scanner;
 
 public class CommandReceiver implements Input{
@@ -8,7 +10,7 @@ public class CommandReceiver implements Input{
 
     @Override
     public String getCommandString(){
-        return scan.next();
+        return StringUtils.trim(scan.next());
     }
 
 }
