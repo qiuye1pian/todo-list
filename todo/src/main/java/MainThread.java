@@ -6,18 +6,21 @@ import com.console.SystemOut;
 
 public class MainThread {
     public static void main(String[] args) {
-        run(new SystemIn(), new SystemOut());
-    }
-
-    public static void run(Input input, Output output) {
+        Output output = new SystemOut();
         output.println("请输入命令：");
         output.println("推出请输入：exit");
+
+        run(new SystemIn(), output);
+
+        output.println("结束");
+    }
+
+    static void run(Input input, Output output) {
         String commandString;
         do {
             commandString = input.getUserInput();
             output.println("命令是" + commandString);
         } while (!commandString.equals("exit"));
-        output.println("结束");
     }
 
 }
