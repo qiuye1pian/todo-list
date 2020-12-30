@@ -9,7 +9,7 @@ public class MainThread {
         run(new SystemIn(), new SystemOut());
     }
 
-    private static void run(Input input, Output output) {
+    public static void run(Input input, Output output) {
         output.println("请输入命令：");
         output.println("推出请输入：exit");
 
