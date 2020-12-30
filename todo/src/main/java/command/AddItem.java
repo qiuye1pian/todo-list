@@ -4,7 +4,7 @@ public class AddItem extends CommandBase {
 
     private String itemText;
 
-    public AddItem(String text) {
+    AddItem(String text) {
         super("add");
         this.itemText = text;
     }
@@ -14,7 +14,7 @@ public class AddItem extends CommandBase {
 
     }
 
-    public String getItemText(){
+    String getItemText(){
         return this.itemText;
     }
 }
