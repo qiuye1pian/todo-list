@@ -12,13 +12,11 @@ public class MainThread {
     public static void run(Input input, Output output) {
         output.println("请输入命令：");
         output.println("推出请输入：exit");
-
         String commandString;
         do {
             commandString = input.getUserInput();
             output.println("命令是" + commandString);
         } while (!commandString.equals("exit"));
-
         output.println("结束");
     }
 

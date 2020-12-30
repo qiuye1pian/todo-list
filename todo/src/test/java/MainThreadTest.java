@@ -19,7 +19,7 @@ public class MainThreadTest {
     @Test
     public void test_exit() {
         //given
-        input.setInput("exit");
+        input.appendInput("exit");
         //when
         MainThread.run(input, output);
         //then
@@ -29,5 +29,17 @@ public class MainThreadTest {
                 "结束\n", output.getResult());
     }
 
+    @Test
+    public void test_multi_input() {
+        //given
+        input.appendInput("1");
+        input.appendInput("exit");
+        MainThread.run(input, output);
+        assertEquals("请输入命令：\n" +
+                "推出请输入：exit\n" +
+                "命令是1\n" +
+                "命令是exit\n" +
+                "结束\n", output.getResult());
+    }
 
 }

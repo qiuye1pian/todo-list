@@ -1,16 +1,21 @@
 package com.console;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MockInput implements Input {
 
 
-    private String input;
+    private List<String> inputList = new ArrayList();
+
+    private int currentInputIndex = 0;
 
     @Override
     public String getUserInput() {
-        return input;
+        return inputList.get(currentInputIndex++);
     }
 
-    public void setInput(String input) {
-        this.input = input;
+    public void appendInput(String s) {
+        inputList.add(s);
     }
 }
