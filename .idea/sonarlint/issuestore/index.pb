@@ -17,3 +17,16 @@ a
 1todo/src/test/java/com/todo/list/AddItemTest.java,2\4\24f60cb4bf44d818e426fbcffd8dea7a3468c487
 b
 2todo/src/test/java/com/todo/list/TodoListTest.java,f\5\f5ab980fd0f93d0277a47db7690b284b5d89364f
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+Z
+*todo/src/main/java/com/console/Output.java,f\a\fa39266531bb74e75ec88d62e23691ba8d0aeaa4
+\
+,todo/src/main/java/com/console/SystemIn.java,4\7\47c64f9809d4df5b4ceb248410565fa2d226fa20
+]
+-todo/src/main/java/com/console/SystemOut.java,7\5\7504af115b5dce3187eeed3f8b784c352696ea93
+V
+&todo/src/test/java/MainThreadTest.java,c\d\cd6916528412d01af3d68d36169e7715eaf8fc03
+Y
+)todo/src/main/java/com/console/Input.java,9\3\9364c28785e35c28b3a76c704d4729ba57440fa4
