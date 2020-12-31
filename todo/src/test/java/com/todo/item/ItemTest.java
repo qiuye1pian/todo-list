@@ -24,4 +24,18 @@ public class ItemTest {
         assertEquals("1. <item>", item.toString());
     }
 
+    @Test
+    public void test_should_be_done_when_set_item() {
+        Item item = new Item(1, "item");
+        item.done();
+        assertEquals("done", item.getStatus());
+    }
+
+    @Test
+    public void test_should_be_show_index_and_done_and_text_when_a_done_item_toString() {
+        Item item = new Item(1, "item");
+        item.done();
+        assertEquals("1. [Done] <item>", item.toString());
+    }
+
 }
