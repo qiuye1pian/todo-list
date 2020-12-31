@@ -2,6 +2,10 @@ import com.console.SystemIn;
 import com.console.Input;
 import com.console.Output;
 import com.console.SystemOut;
+import com.todo.list.TodoList;
+import command.CommandBase;
+import command.CommandFactory;
+import command.Exit;
 
 
 public class MainThread {
@@ -16,11 +20,14 @@ public class MainThread {
     }
 
     static void run(Input input, Output output) {
-        String commandString;
+        CommandBase commandBase;
+        TodoList todoList = new TodoList();
         do {
+            String commandString;
             commandString = input.getUserInput();
-            output.println("命令是" + commandString);
-        } while (!commandString.equals("exit"));
+            commandBase = CommandFactory.createCommand(commandString);
+            output.println(commandBase.doAction(todoList));
+        } while (!(commandBase instanceof Exit));
     }
 
 }

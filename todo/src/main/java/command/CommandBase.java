@@ -1,5 +1,7 @@
 package command;
 
+import com.todo.list.TodoList;
+
 public abstract class CommandBase {
     String action;
 
@@ -11,5 +13,5 @@ public abstract class CommandBase {
         return this.action;
     }
 
-    public abstract void doAction();
+    public abstract String doAction(TodoList todoList);
 }

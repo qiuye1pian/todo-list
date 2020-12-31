@@ -1,5 +1,6 @@
 package command;
 
+import com.todo.list.TodoList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -16,8 +17,21 @@ public class CommandFactoryTest {
         //Then
         assertEquals(AddItem.class, command.getClass());
         assertEquals("add", command.getAction());
-        assertEquals("item",((AddItem)command).getItemText());
+        assertEquals("item", ((AddItem) command).getItemText());
     }
+
+    @Test
+    public void test_do_action() {
+        String inputCommandString = "todo add <item>";
+        TodoList todoList = new TodoList();
+        CommandBase command = CommandFactory.createCommand(inputCommandString);
+        assertEquals("1. <item>\r\n" +
+                        "\r\n" +
+                        "Item <1> added",
+                command.doAction(todoList));
+
+    }
+
 }
 
 

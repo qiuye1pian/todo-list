@@ -23,17 +23,23 @@ public class MainThreadTest {
         //when
         MainThread.run(input, output);
         //then
-        assertEquals("命令是exit\n", output.getResult());
+        assertEquals("exit\r\n", output.getResult());
     }
 
     @Test
     public void test_multi_input() {
         //given
-        input.appendInput("1");
+        input.appendInput("todo add <item>");
         input.appendInput("exit");
         MainThread.run(input, output);
-        assertEquals("命令是1\n" +
-                "命令是exit\n", output.getResult());
+        assertEquals("1. <item>\r\n" +
+                "\r\n"+
+                "Item <1> added\r\n"+
+                "exit\r\n",
+                output.getResult());
     }
+
+
+
 
 }

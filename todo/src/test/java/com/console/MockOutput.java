@@ -7,7 +7,7 @@ public class MockOutput implements Output {
     @Override
     public void println(String text) {
         this.result.append(text);
-        this.result.append("\n");
+        this.result.append("\r\n");
     }
 
     public String getResult() {

@@ -4,6 +4,9 @@ import org.apache.commons.lang.StringUtils;
 
 public class CommandFactory {
     public static CommandBase createCommand(String inputCommandString) {
+        if ("exit".equalsIgnoreCase(split(inputCommandString)[0])) {
+            return new Exit();
+        }
         return new AddItem(pickupText(split(inputCommandString)[2]));
     }
 
