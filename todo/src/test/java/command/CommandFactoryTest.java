@@ -4,7 +4,6 @@ import com.todo.list.TodoList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class CommandFactoryTest {
 
@@ -21,7 +20,7 @@ public class CommandFactoryTest {
     }
 
     @Test
-    public void test_do_action() {
+    public void test_add_command_do_action() {
         String inputCommandString = "todo add <item>";
         TodoList todoList = new TodoList();
         CommandBase command = CommandFactory.createCommand(inputCommandString);
@@ -30,6 +29,18 @@ public class CommandFactoryTest {
                         "Item <1> added",
                 command.doAction(todoList));
 
+    }
+
+    @Test
+    public void test_create_item_done_command() {
+        //Given
+        String inputCommandString = "todo done <2>";
+        //When
+        CommandBase command = CommandFactory.createCommand(inputCommandString);
+        //Then
+        assertEquals(Done.class, command.getClass());
+        assertEquals("done", command.getAction());
+        assertEquals(2, ((Done) command).getItemIndex());
     }
 
 }

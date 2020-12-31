@@ -26,7 +26,9 @@ public class MainThread {
             String commandString;
             commandString = input.getUserInput();
             commandBase = CommandFactory.createCommand(commandString);
-            output.println(commandBase.doAction(todoList));
+            if (commandBase != null) {
+                output.println(commandBase.doAction(todoList));
+            }
         } while (!(commandBase instanceof Exit));
     }
 

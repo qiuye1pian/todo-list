@@ -12,7 +12,14 @@ public class CommandFactory {
         if ("exit".equalsIgnoreCase(split(inputCommandString)[0])) {
             return new Exit();
         }
-        return new Add(pickupText(split(inputCommandString)[2]));
+        switch (split(inputCommandString)[1]) {
+            case "add":
+                return new Add(pickupText(split(inputCommandString)[2]));
+            case "done":
+                return new Done(pickupText(split(inputCommandString)[2]));
+            default:
+                return null;
+        }
     }
 
     private static String pickupText(String itemText) {
