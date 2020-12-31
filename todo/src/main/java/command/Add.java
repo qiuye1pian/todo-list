@@ -3,11 +3,11 @@ package command;
 import com.todo.item.Item;
 import com.todo.list.TodoList;
 
-public class AddItem extends CommandBase {
+public class Add extends CommandBase {
 
     private String itemText;
 
-    AddItem(String text) {
+    Add(String text) {
         super("add");
         this.itemText = text;
     }

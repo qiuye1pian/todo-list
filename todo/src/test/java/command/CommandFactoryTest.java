@@ -15,9 +15,9 @@ public class CommandFactoryTest {
         //When
         CommandBase command = CommandFactory.createCommand(inputCommandString);
         //Then
-        assertEquals(AddItem.class, command.getClass());
+        assertEquals(Add.class, command.getClass());
         assertEquals("add", command.getAction());
-        assertEquals("item", ((AddItem) command).getItemText());
+        assertEquals("item", ((Add) command).getItemText());
     }
 
     @Test
