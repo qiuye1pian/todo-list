@@ -3,7 +3,6 @@ package com.todo.list;
 import com.todo.item.Item;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
