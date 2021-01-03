@@ -23,11 +23,11 @@ public class TodoList {
         return itemList.size();
     }
 
-    public String done(int itemIndex) {
+    String findItemAndSetItemdone(int itemIndex) {
         Optional<Item> targetItem = itemList.stream().filter(x -> x.getIndex() == itemIndex).findAny();
         if (targetItem.isPresent()) {
             targetItem.get().done();
-            return String.format("Item <%d> done.", itemIndex);
+            return String.format("Item <%d> findItemAndSetItemdone.", itemIndex);
         } else {
             return String.format("Item <%d> not found.", itemIndex);
         }
