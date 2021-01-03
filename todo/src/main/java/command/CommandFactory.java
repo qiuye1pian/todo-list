@@ -18,7 +18,7 @@ public class CommandFactory {
             case "done":
                 return new Done(pickupText(split(inputCommandString)[2]));
             case "list":
-                return new Listing(pickupText(split(inputCommandString)[1]));
+                return new Listing(pickupListingParameter(inputCommandString));
             default:
                 return new Unknown();
         }
@@ -26,6 +26,15 @@ public class CommandFactory {
 
     private static String pickupText(String itemText) {
         return StringUtils.substring(itemText, 1, itemText.length() - 1);
+    }
+
+    private static String pickupListingParameter(String inputCommandString) {
+        String[] commandStringArray = split(inputCommandString);
+        if (commandStringArray.length == 3) {
+            return commandStringArray[2].replace("-", "");
+        } else {
+            return StringUtils.EMPTY;
+        }
     }
 
     private static String[] split(String commandString) {

@@ -1,6 +1,7 @@
 import com.console.MockInput;
 import com.console.MockOutput;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -55,7 +56,7 @@ public class MainThreadTest {
     }
 
     @Test
-    public void test_listing_item()
+    public void test_listing_item_show_ongoing_item_default()
     {
         input.appendInput("todo add <item1>");
         input.appendInput("todo add <item2>");
@@ -83,7 +84,34 @@ public class MainThreadTest {
                 output.getResult());
     }
 
-
-
+    @Test
+    public void test_listing_item_show_all()
+    {
+        input.appendInput("todo add <item1>");
+        input.appendInput("todo add <item2>");
+        input.appendInput("todo add <item3>");
+        input.appendInput("todo done <3>");
+        input.appendInput("todo list --all");
+        input.appendInput("exit");
+        MainThread.run(input, output);
+        assertEquals("1. <item1>\r\n" +
+                        "\r\n" +
+                        "Item <1> added\r\n" +
+                        "2. <item2>\r\n" +
+                        "\r\n" +
+                        "Item <2> added\r\n" +
+                        "3. <item3>\r\n" +
+                        "\r\n" +
+                        "Item <3> added\r\n" +
+                        "Item <3> done.\r\n" +
+                        "1. <item1>\r\n" +
+                        "2. <item2>\r\n" +
+                        "3. [Done] <item3>\r\n" +
+                        "\r\n" +
+                        "\r\n" +
+                        "Total: 3 items, 1 item done\r\n" +
+                        "exit\r\n",
+                output.getResult());
+    }
 
 }

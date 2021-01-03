@@ -3,6 +3,7 @@ package com.todo.list;
 import com.todo.item.Item;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,4 +39,11 @@ public class TodoList {
         return this.itemList.stream().filter(Item::ongoing).collect(Collectors.toList());
     }
 
+    public List<Item> getAllFinished() {
+        return this.itemList.stream().filter(Item::finished).collect(Collectors.toList());
+    }
+
+    public List<Item> getAllItems() {
+        return this.itemList;
+    }
 }

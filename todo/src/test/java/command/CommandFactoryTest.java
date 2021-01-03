@@ -42,6 +42,17 @@ public class CommandFactoryTest {
         assertEquals("list", command.getAction());
     }
 
+    @Test
+    public void test_todo_list_all_command() {
+        //Given
+        String inputCommandString = "todo list --all";
+        //When
+        CommandBase command = CommandFactory.createCommand(inputCommandString);
+        //Then
+        assertEquals(Listing.class, command.getClass());
+        assertEquals("list", command.getAction());
+        assertEquals("all",((Listing)command).getParameter());
+    }
 }
 
 

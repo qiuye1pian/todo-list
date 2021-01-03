@@ -40,4 +40,8 @@ public class Item {
     public boolean ongoing() {
         return StringUtils.isEmpty(this.status);
     }
+
+    public boolean finished() {
+        return "done".equalsIgnoreCase(this.status);
+    }
 }
