@@ -4,6 +4,7 @@ import com.todo.item.Item;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class TodoList {
     private List<Item> itemList = new ArrayList<>();
@@ -20,5 +21,15 @@ public class TodoList {
 
     int size() {
         return itemList.size();
+    }
+
+    public String done(int itemIndex) {
+        Optional<Item> targetItem = itemList.stream().filter(x -> x.getIndex() == itemIndex).findAny();
+        if (targetItem.isPresent()) {
+            targetItem.get().done();
+            return String.format("Item <%d> done.", itemIndex);
+        } else {
+            return "Item not found.";
+        }
     }
 }
