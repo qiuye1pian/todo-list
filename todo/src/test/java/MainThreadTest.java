@@ -39,5 +39,19 @@ public class MainThreadTest {
                 output.getResult());
     }
 
+    @Test
+    public void test_done_item()
+    {
+        input.appendInput("todo addNewItem <item>");
+        input.appendInput("todo done <1>");
+        input.appendInput("exit");
+        MainThread.run(input, output);
+        assertEquals("1. <item>\r\n" +
+                        "\r\n"+
+                        "Item <1> added\r\n"+
+                        "Item <1> done.\r\n"+
+                        "exit\r\n",
+                output.getResult());
+    }
 
 }

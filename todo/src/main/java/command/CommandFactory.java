@@ -13,10 +13,12 @@ public class CommandFactory {
             return new Exit();
         }
         switch (split(inputCommandString)[1]) {
-            case "addNewItem":
+            case "addNewItem"://todo:这里改错了
                 return new Add(pickupText(split(inputCommandString)[2]));
             case "done":
                 return new Done(pickupText(split(inputCommandString)[2]));
+            case "list":
+                return new Listing(pickupText(split(inputCommandString)[1]));
             default:
                 return new Unknown();
         }

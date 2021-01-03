@@ -4,7 +4,7 @@ import com.todo.list.TodoList;
 
 public class Done extends CommandBase {
 
-    private int itemIndex = -1;
+    private int itemIndex;
 
     public Done(int index) {
         super("done");
@@ -18,7 +18,7 @@ public class Done extends CommandBase {
 
     @Override
     public String doAction(TodoList todoList) {
-        return null;
+        return todoList.findItemAndFinishItem(this.itemIndex);
     }
 
     int getItemIndex() {

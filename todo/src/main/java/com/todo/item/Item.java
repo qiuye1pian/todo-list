@@ -23,7 +23,7 @@ public class Item {
 
     @Override
     public String toString() {
-        if(StringUtils.isNotEmpty(this.status)){
+        if (StringUtils.isNotEmpty(this.status)) {
             return String.format("%d. [Done] <%s>", this.index, this.text);
         }
         return String.format("%d. <%s>", this.index, this.text);
@@ -35,5 +35,9 @@ public class Item {
 
     String getStatus() {
         return this.status;
+    }
+
+    public boolean ongoing() {
+        return StringUtils.isEmpty(this.status);
     }
 }

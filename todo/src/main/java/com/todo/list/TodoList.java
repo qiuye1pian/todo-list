@@ -5,6 +5,7 @@ import com.todo.item.Item;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class TodoList {
     private List<Item> itemList = new ArrayList<>();
@@ -23,7 +24,7 @@ public class TodoList {
         return itemList.size();
     }
 
-    String findItemAndSetItemDone(int itemIndex) {
+    public String findItemAndFinishItem(int itemIndex) {
         Optional<Item> targetItem = itemList.stream().filter(x -> x.getIndex() == itemIndex).findAny();
         if (targetItem.isPresent()) {
             targetItem.get().done();
@@ -31,5 +32,9 @@ public class TodoList {
         } else {
             return String.format("Item <%d> not found.", itemIndex);
         }
+    }
+
+    public List<Item> getAllOngoing() {
+        return this.itemList.stream().filter(Item::ongoing).collect(Collectors.toList());
     }
 }
