@@ -8,7 +8,7 @@ public class Add extends CommandBase {
     private String itemText;
 
     Add(String text) {
-        super("addNewItem");
+        super("add");
         this.itemText = text;
     }
 

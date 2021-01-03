@@ -29,7 +29,7 @@ public class MainThreadTest {
     @Test
     public void test_multi_input() {
         //given
-        input.appendInput("todo addNewItem <item>");
+        input.appendInput("todo add <item>");
         input.appendInput("exit");
         MainThread.run(input, output);
         assertEquals("1. <item>\r\n" +
@@ -42,7 +42,7 @@ public class MainThreadTest {
     @Test
     public void test_done_item()
     {
-        input.appendInput("todo addNewItem <item>");
+        input.appendInput("todo add <item>");
         input.appendInput("todo done <1>");
         input.appendInput("exit");
         MainThread.run(input, output);
