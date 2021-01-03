@@ -13,13 +13,13 @@ public class DoneItemTest {
 
         TodoList todoList = new TodoList();
         todoList.addNewItem("test");
-        assertEquals("Item <1> findItemAndSetItemdone.", todoList.findItemAndSetItemdone(1));
+        assertEquals("Item <1> done.", todoList.findItemAndSetItemDone(1));
     }
     @Test
     public void test_should_be_not_found_when_todoList_index_out_of_range() {
 
         TodoList todoList = new TodoList();
-        assertEquals("Item <1> not found.", todoList.findItemAndSetItemdone(1));
+        assertEquals("Item <1> not found.", todoList.findItemAndSetItemDone(1));
     }
 
     @Test
@@ -27,8 +27,8 @@ public class DoneItemTest {
         TodoList todoList = new TodoList();
         todoList.addNewItem("item1");
         todoList.addNewItem("item2");
-        assertEquals("Item <2> findItemAndSetItemdone.", todoList.findItemAndSetItemdone(2));
-        assertEquals("Item <1> findItemAndSetItemdone.", todoList.findItemAndSetItemdone(1));
+        assertEquals("Item <2> done.", todoList.findItemAndSetItemDone(2));
+        assertEquals("Item <1> done.", todoList.findItemAndSetItemDone(1));
     }
 
 }
