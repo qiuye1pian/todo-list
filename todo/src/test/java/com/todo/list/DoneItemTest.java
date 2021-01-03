@@ -12,7 +12,7 @@ public class DoneItemTest {
     public void test_todoList_can_set_item_done() {
 
         TodoList todoList = new TodoList();
-        todoList.add("test");
+        todoList.addNewItem("test");
         assertEquals("Item <1> findItemAndSetItemdone.", todoList.findItemAndSetItemdone(1));
     }
     @Test
@@ -25,8 +25,8 @@ public class DoneItemTest {
     @Test
     public void test_index_should_increase_when_add_new_item() {
         TodoList todoList = new TodoList();
-        todoList.add("item1");
-        todoList.add("item2");
+        todoList.addNewItem("item1");
+        todoList.addNewItem("item2");
         assertEquals("Item <2> findItemAndSetItemdone.", todoList.findItemAndSetItemdone(2));
         assertEquals("Item <1> findItemAndSetItemdone.", todoList.findItemAndSetItemdone(1));
     }

@@ -8,14 +8,14 @@ public class Add extends CommandBase {
     private String itemText;
 
     Add(String text) {
-        super("add");
+        super("addNewItem");
         this.itemText = text;
     }
 
 
     @Override
     public String doAction(TodoList todoList) {
-        Item newItem = todoList.add(this.itemText);
+        Item newItem = todoList.addNewItem(this.itemText);
         return String.format("%s%n%nItem <%d> added", newItem.toString(), newItem.getIndex());
     }
 

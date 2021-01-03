@@ -10,18 +10,18 @@ public class CommandFactoryTest {
     @Test
     public void test_create_add_command() {
         //Given
-        String inputCommandString = "todo add <item>";
+        String inputCommandString = "todo addNewItem <item>";
         //When
         CommandBase command = CommandFactory.createCommand(inputCommandString);
         //Then
         assertEquals(Add.class, command.getClass());
-        assertEquals("add", command.getAction());
+        assertEquals("addNewItem", command.getAction());
         assertEquals("item", ((Add) command).getItemText());
     }
 
     @Test
     public void test_add_command_do_action() {
-        String inputCommandString = "todo add <item>";
+        String inputCommandString = "todo addNewItem <item>";
         TodoList todoList = new TodoList();
         CommandBase command = CommandFactory.createCommand(inputCommandString);
         assertEquals("1. <item>\r\n" +

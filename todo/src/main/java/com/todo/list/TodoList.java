@@ -9,7 +9,7 @@ import java.util.Optional;
 public class TodoList {
     private List<Item> itemList = new ArrayList<>();
 
-    public Item add(String text) {
+    public Item addNewItem(String text) {
         Item newItem = new Item(getNewIndex(), text);
         itemList.add(newItem);
         return newItem;

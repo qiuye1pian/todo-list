@@ -13,7 +13,7 @@ public class CommandFactory {
             return new Exit();
         }
         switch (split(inputCommandString)[1]) {
-            case "add":
+            case "addNewItem":
                 return new Add(pickupText(split(inputCommandString)[2]));
             case "done":
                 return new Done(pickupText(split(inputCommandString)[2]));
