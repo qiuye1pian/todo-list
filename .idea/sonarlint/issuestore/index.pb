@@ -15,8 +15,6 @@ Z
 .todo/src/test/java/com/todo/item/ItemTest.java,3\d\3dfc353e4ba6dba462a811604a4d43bb6d0c91bb
 a
 1todo/src/test/java/com/todo/list/AddItemTest.java,2\4\24f60cb4bf44d818e426fbcffd8dea7a3468c487
-b
-2todo/src/test/java/com/todo/list/TodoListTest.java,f\5\f5ab980fd0f93d0277a47db7690b284b5d89364f
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -30,3 +28,21 @@ V
 &todo/src/test/java/MainThreadTest.java,c\d\cd6916528412d01af3d68d36169e7715eaf8fc03
 Y
 )todo/src/main/java/com/console/Input.java,9\3\9364c28785e35c28b3a76c704d4729ba57440fa4
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+]
+-todo/src/test/java/com/console/MockInput.java,f\6\f6c8adbfa257407cc551159b521ef19be4df3ad9
+^
+.todo/src/test/java/com/console/MockOutput.java,e\6\e663085bebdd5e5115772f7db8249f88af06f288
+T
+$todo/src/main/java/command/Exit.java,a\e\ae5980978bea8790be90b93b42b5d1bb30b8dd98
+[
++todo/src/main/java/command/CommandBase.java,8\3\83595283c14d62571d3f1b196890f971a2cbd8a7
+S
+#todo/src/main/java/command/Add.java,4\b\4bafaf6493b58f755327d778b2f40545c8317fe1
+^
+.todo/src/main/java/command/CommandFactory.java,6\4\64acae1e3bed3054a68f0be62cfe7d6240c6bf0e
+T
+$todo/src/main/java/command/Done.java,4\f\4f42192d0cd0457efb0ce7501d04fde7f17de425
+b
+2todo/src/test/java/command/CommandFactoryTest.java,e\4\e410a1330fdbbd4eca1f56ffbee9505e589ff1f5

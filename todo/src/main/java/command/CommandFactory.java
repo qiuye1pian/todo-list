@@ -18,7 +18,7 @@ public class CommandFactory {
             case "done":
                 return new Done(pickupText(split(inputCommandString)[2]));
             default:
-                return null;
+                return new Unknown();
         }
     }
 
