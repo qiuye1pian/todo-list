@@ -29,7 +29,7 @@ public class TodoList {
             targetItem.get().done();
             return String.format("Item <%d> done.", itemIndex);
         } else {
-            return "Item not found.";
+            return String.format("Item <%d> not found.", itemIndex);
         }
     }
 }

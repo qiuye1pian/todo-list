@@ -14,8 +14,13 @@ public class DoneItemTest {
 
         TodoList todoList = new TodoList();
         todoList.add("test");
-        todoList.done(1);
         assertEquals("Item <1> done.", todoList.done(1));
+    }
+    @Test
+    public void test_should_be_not_found_when_todoList_index_out_of_range() {
+
+        TodoList todoList = new TodoList();
+        assertEquals("Item <1> not found.", todoList.done(1));
     }
 
     @Test
