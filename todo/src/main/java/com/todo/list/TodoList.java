@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TodoList {
-    List<Item> itemList = new ArrayList<>();
+    private List<Item> itemList = new ArrayList<>();
 
     public Item add(String text) {
         Item newItem = new Item(getNewIndex(), text);
@@ -18,7 +18,7 @@ public class TodoList {
         return itemList.size() + 1;
     }
 
-    public int size() {
+    int size() {
         return itemList.size();
     }
 }
