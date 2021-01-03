@@ -1,7 +1,9 @@
 package com.todo.list;
 
+import com.todo.item.Item;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -13,22 +15,16 @@ public class DoneItemTest {
 
         TodoList todoList = new TodoList();
         todoList.addNewItem("test");
-        assertEquals("Item <1> done.", todoList.findItemAndFinishItem(1));
+        assertNotNull(todoList.findItemAndFinishItem(1));
     }
+
     @Test
     public void test_should_be_not_found_when_todoList_index_out_of_range() {
 
         TodoList todoList = new TodoList();
-        assertEquals("Item <1> not found.", todoList.findItemAndFinishItem(1));
+        assertNull(todoList.findItemAndFinishItem(1));
     }
 
-    @Test
-    public void test_index_should_increase_when_add_new_item() {
-        TodoList todoList = new TodoList();
-        todoList.addNewItem("item1");
-        todoList.addNewItem("item2");
-        assertEquals("Item <1> done.", todoList.findItemAndFinishItem(1));
-        assertEquals("Item <2> done.", todoList.findItemAndFinishItem(2));
-    }
+
 
 }

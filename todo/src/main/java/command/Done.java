@@ -1,5 +1,6 @@
 package command;
 
+import com.todo.item.Item;
 import com.todo.list.TodoList;
 
 public class Done extends CommandBase {
@@ -18,7 +19,12 @@ public class Done extends CommandBase {
 
     @Override
     public String doAction(TodoList todoList) {
-        return todoList.findItemAndFinishItem(this.itemIndex);
+        Item targetItem = todoList.findItemAndFinishItem(this.itemIndex);
+        if (targetItem == null) {
+            return String.format("Item <%d> not found.", this.itemIndex);
+        } else {
+            return String.format("Item <%d> done.", this.itemIndex);
+        }
     }
 
     int getItemIndex() {

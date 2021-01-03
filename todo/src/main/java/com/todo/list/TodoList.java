@@ -24,17 +24,18 @@ public class TodoList {
         return itemList.size();
     }
 
-    public String findItemAndFinishItem(int itemIndex) {
+    public Item findItemAndFinishItem(int itemIndex) {
         Optional<Item> targetItem = itemList.stream().filter(x -> x.getIndex() == itemIndex).findAny();
         if (targetItem.isPresent()) {
             targetItem.get().done();
-            return String.format("Item <%d> done.", itemIndex);
+            return targetItem.get();
         } else {
-            return String.format("Item <%d> not found.", itemIndex);
+            return null;
         }
     }
 
     public List<Item> getAllOngoing() {
         return this.itemList.stream().filter(Item::ongoing).collect(Collectors.toList());
     }
+
 }
