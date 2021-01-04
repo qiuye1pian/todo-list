@@ -1,6 +1,5 @@
-package command;
+package com.command;
 
-import com.todo.list.TodoList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

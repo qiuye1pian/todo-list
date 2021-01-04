@@ -1,4 +1,4 @@
-package command;
+package com.command;
 
 import com.todo.list.TodoList;
 

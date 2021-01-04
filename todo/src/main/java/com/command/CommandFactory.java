@@ -1,4 +1,4 @@
-package command;
+package com.command;
 
 import org.apache.commons.lang.StringUtils;
 

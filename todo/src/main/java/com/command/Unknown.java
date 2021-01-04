@@ -1,4 +1,4 @@
-package command;
+package com.command;
 
 import com.todo.list.TodoList;
 
@@ -10,7 +10,7 @@ public class Unknown extends CommandBase {
 
     @Override
     public String doAction(TodoList todoList) {
-        return "Unknown command";
+        return "Unknown com.command";
     }
 
 }
