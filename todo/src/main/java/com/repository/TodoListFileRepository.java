@@ -26,7 +26,7 @@ public class TodoListFileRepository implements IRepository {
 
     @Override
     public TodoList getTodoList() {
-        String json = readJsonFromFile();
+        String json = loadJsonFromFile();
         if (StringUtils.isNotEmpty(json)) {
             return gson.fromJson(json, TodoList.class);
         } else {
@@ -34,7 +34,7 @@ public class TodoListFileRepository implements IRepository {
         }
     }
 
-    private String readJsonFromFile() {
+    private String loadJsonFromFile() {
         try (FileInputStream fileInputStream = new FileInputStream(this.file);
              InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
              BufferedReader bufferedReader = new BufferedReader(inputStreamReader);) {
@@ -45,7 +45,7 @@ public class TodoListFileRepository implements IRepository {
                 stringBuilder.append(line);
             }
             return stringBuilder.toString();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             return StringUtils.EMPTY;
         }
     }
@@ -53,6 +53,10 @@ public class TodoListFileRepository implements IRepository {
 
     @Override
     public void saveTodoList(TodoList todoList) {
-        String json = gson.toJson(todoList);
+        try(FileWriter fileWriter = new FileWriter(this.file);){
+            fileWriter.write(gson.toJson(todoList));
+            fileWriter.flush();
+        }catch (IOException ignored){
+        }
     }
 }

@@ -20,7 +20,8 @@ public class MainThread {
         output.println("请输入命令：");
         output.println("推出请输入：exit");
 
-        IRepository fileRepository = tryToCreateFileRepository("");
+        IRepository fileRepository = tryToCreateFileRepository("\\TodoList.repo");
+
         if (fileRepository == null) {
             output.println("Can not open file.");
             return;
@@ -41,7 +42,7 @@ public class MainThread {
             commandBase = CommandFactory.createCommand(commandString);
             output.println(commandBase.doAction(todoList));
         } while (!(commandBase instanceof Exit));
-
+        iRepository.saveTodoList(todoList);
     }
 
     private static IRepository tryToCreateFileRepository(String filePath) {
