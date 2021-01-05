@@ -10,6 +10,7 @@ import com.repository.TodoListFileRepository;
 import com.todo.list.TodoList;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 
@@ -17,8 +18,11 @@ public class MainThread {
     public static void main(String[] args) {
         Output output = new SystemOut();
 
+        Arrays.stream(args).forEach(x -> output.println(String.format("%s", x)));
+
         output.println("welcome.");
         output.println("enter exit to end.");
+
         IRepository fileRepository = tryToCreateFileRepository("./TodoList.repo", output);
 
         run(fileRepository, new SystemIn(), output);

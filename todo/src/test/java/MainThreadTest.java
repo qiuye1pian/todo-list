@@ -27,7 +27,7 @@ public class MainThreadTest {
         //when
         MainThread.run(mockRepository, input, output);
         //then
-        assertEquals("exit\r\n", output.getResult());
+        assertEquals("\r\n", output.getResult());
     }
 
     @Test
@@ -38,8 +38,7 @@ public class MainThreadTest {
         MainThread.run(mockRepository, input, output);
         assertEquals("1. <item>\r\n" +
                         "\r\n" +
-                        "Item <1> added\r\n" +
-                        "exit\r\n",
+                        "Item <1> added\r\n\r\n",
                 output.getResult());
     }
 
@@ -52,8 +51,7 @@ public class MainThreadTest {
         assertEquals("1. <item>\r\n" +
                         "\r\n" +
                         "Item <1> added\r\n" +
-                        "Item <1> done.\r\n" +
-                        "exit\r\n",
+                        "Item <1> done.\r\n\r\n",
                 output.getResult());
     }
 
@@ -80,8 +78,7 @@ public class MainThreadTest {
                         "2. <item2>\r\n" +
                         "\r\n" +
                         "\r\n" +
-                        "Total: 2 items\r\n" +
-                        "exit\r\n",
+                        "Total: 2 items\r\n\r\n",
                 output.getResult());
     }
 
@@ -109,8 +106,7 @@ public class MainThreadTest {
                         "3. [Done] <item3>\r\n" +
                         "\r\n" +
                         "\r\n" +
-                        "Total: 3 items, 1 item done\r\n" +
-                        "exit\r\n",
+                        "Total: 3 items, 1 item done\r\n\r\n",
                 output.getResult());
     }
 
@@ -120,8 +116,7 @@ public class MainThreadTest {
         input.appendInput("1");
         input.appendInput("exit");
         MainThread.run(mockRepository, input, output);
-        assertEquals("Unknown command\r\n" +
-                        "exit\r\n",
+        assertEquals("Unknown command\r\n\r\n",
                 output.getResult());
     }
 }
