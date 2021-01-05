@@ -1,14 +1,13 @@
-import com.console.SystemIn;
+import com.command.CommandBase;
+import com.command.CommandFactory;
+import com.command.Exit;
 import com.console.Input;
 import com.console.Output;
+import com.console.SystemIn;
 import com.console.SystemOut;
 import com.repository.IRepository;
 import com.repository.TodoListFileRepository;
 import com.todo.list.TodoList;
-import com.command.CommandBase;
-import com.command.CommandFactory;
-import com.command.Exit;
-import javafx.util.Pair;
 
 import java.io.IOException;
 
