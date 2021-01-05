@@ -10,7 +10,7 @@ public class Unknown extends CommandBase {
 
     @Override
     public String doAction(TodoList todoList) {
-        return "Unknown com.command";
+        return "Unknown command";
     }
 
 }

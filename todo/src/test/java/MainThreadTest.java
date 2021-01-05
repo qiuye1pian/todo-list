@@ -114,4 +114,14 @@ public class MainThreadTest {
                 output.getResult());
     }
 
+
+    @Test
+    public void test_unknow_item() {
+        input.appendInput("1");
+        input.appendInput("exit");
+        MainThread.run(mockRepository, input, output);
+        assertEquals("Unknown command\r\n" +
+                        "exit\r\n",
+                output.getResult());
+    }
 }
