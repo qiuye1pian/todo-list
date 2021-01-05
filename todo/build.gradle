@@ -15,3 +15,15 @@ dependencies {
     compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
     compile 'com.google.code.gson:gson:2.6.2'
 }
+
+jar {
+    baseName = 'MainThread'
+    version = '0.0.1'
+    manifest {
+        attributes "Manifest-Version": 1.0,
+                'Main-Class': 'MainThread'
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
