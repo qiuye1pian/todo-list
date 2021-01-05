@@ -12,6 +12,9 @@ public class CommandFactory {
         if ("exit".equalsIgnoreCase(split(inputCommandString)[0])) {
             return new Exit();
         }
+        if (!"todo".equalsIgnoreCase(split(inputCommandString)[0])) {
+            return new Unknown();
+        }
         switch (split(inputCommandString)[1]) {
             case "add":
                 return new Add(pickupText(split(inputCommandString)[2]));

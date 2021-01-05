@@ -16,24 +16,20 @@ public class MainThread {
     public static void main(String[] args) {
         Output output = new SystemOut();
 
-        output.println("请输入命令：");
-        output.println("推出请输入：exit");
-
-        IRepository fileRepository = tryToCreateFileRepository("\\TodoList.repo");
-
-        if (fileRepository == null) {
-            output.println("Can not open file.");
-            return;
-        }
+        output.println("welcome.");
+        output.println("enter exit to end.");
+        IRepository fileRepository = tryToCreateFileRepository("./TodoList.repo", output);
 
         run(fileRepository, new SystemIn(), output);
 
-        output.println("结束");
     }
 
     static void run(IRepository iRepository, Input input, Output output) {
         CommandBase commandBase;
-
+        if (iRepository == null) {
+            output.println("Can not initialize repository file.");
+            return;
+        }
         TodoList todoList = iRepository.getTodoList();
         do {
             String commandString;
@@ -44,10 +40,11 @@ public class MainThread {
         iRepository.saveTodoList(todoList);
     }
 
-    private static IRepository tryToCreateFileRepository(String filePath) {
+    private static IRepository tryToCreateFileRepository(String filePath, Output output) {
         try {
             return new TodoListFileRepository(filePath);
         } catch (IOException ex) {
+            output.println(ex.getMessage());
             return null;
         }
     }

@@ -18,9 +18,8 @@ public class TodoListFileRepository implements IRepository {
         if (file.exists()) {
             return;
         }
-        if (
-                file.createNewFile()) {
-            throw new IOException("");
+        if (!file.createNewFile()) {
+            throw new IOException("Can not create file.");
         }
     }
 
@@ -52,11 +51,13 @@ public class TodoListFileRepository implements IRepository {
 
 
     @Override
-    public void saveTodoList(TodoList todoList) {
-        try(FileWriter fileWriter = new FileWriter(this.file);){
+    public String saveTodoList(TodoList todoList) {
+        try (FileWriter fileWriter = new FileWriter(this.file);) {
             fileWriter.write(gson.toJson(todoList));
             fileWriter.flush();
-        }catch (IOException ignored){
+            return StringUtils.EMPTY;
+        } catch (IOException ex) {
+            return ex.getMessage();
         }
     }
 }

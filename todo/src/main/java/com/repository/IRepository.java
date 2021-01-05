@@ -6,6 +6,6 @@ public interface IRepository {
 
     TodoList getTodoList();
 
-    void saveTodoList(TodoList todoList);
+    String saveTodoList(TodoList todoList);
 
 }
