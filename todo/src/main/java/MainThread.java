@@ -10,6 +10,7 @@ import com.repository.TodoListFileRepository;
 import com.todo.list.TodoList;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 
 public class MainThread {
@@ -32,10 +33,15 @@ public class MainThread {
         }
         TodoList todoList = iRepository.getTodoList();
         do {
-            String commandString;
-            commandString = input.getUserInput();
-            commandBase = CommandFactory.createCommand(commandString);
-            output.println(commandBase.doAction(todoList));
+            try {
+                commandBase = CommandFactory.createCommand(input.getUserInput());
+                output.println(commandBase.doAction(todoList));
+            } catch (NoSuchElementException noSuchElement) {
+                break;
+            } catch (Exception ex) {
+                output.println(ex.getMessage());
+                commandBase = CommandFactory.createUnknownCommand();
+            }
         } while (!(commandBase instanceof Exit));
         iRepository.saveTodoList(todoList);
     }

@@ -44,4 +44,7 @@ public class CommandFactory {
         return StringUtils.split(commandString, " ");
     }
 
+    public static CommandBase createUnknownCommand() {
+        return new Unknown();
+    }
 }
