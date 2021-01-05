@@ -5,7 +5,6 @@ import java.util.List;
 
 public class MockInput implements Input {
 
-
     private List<String> inputList = new ArrayList<>();
 
     private int currentInputIndex = 0;
